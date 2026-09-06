@@ -97,10 +97,19 @@ def _run_genie3_core(expr_df, tfs, seed, n_estimators, client):
     return network_df
 
 
+MAX_CELLS = 2000
+
+
 def run_one_combo(adata, gt_edges, seed, n_estimators=None):
     expr_df = pd.DataFrame(adata.X, columns=adata.var_names)
     tfs = adata.var_names[adata.var["is_TF"]].tolist()
     targets = adata.var_names.tolist()
+
+    # Cap cells per run: RF-based GRN inference (GENIE3) scales with n_cells,
+    # and beyond a few thousand cells the extra rows buy little signal for
+    # much more compute -- standard practice for this class of method.
+    if expr_df.shape[0] > MAX_CELLS:
+        expr_df = expr_df.sample(n=MAX_CELLS, random_state=seed)
 
     from dask.distributed import Client, LocalCluster
 
