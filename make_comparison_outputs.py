@@ -32,7 +32,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 THIS_DIR = Path(__file__).resolve().parent
 DEFAULT_GENIE3_SUMMARY = THIS_DIR / "results" / "genie3_density_results_summary.csv"
 DEFAULT_MARLENE_SUMMARY = (
-    THIS_DIR.parent / "marlene" / "Marlene" / "findings" / "marlene_density_results_summary.csv"
+    THIS_DIR.parent / "marlene_density_results_summary.csv"
 )
 DEFAULT_OUT_DIR = THIS_DIR / "results"
 
