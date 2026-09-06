@@ -1,0 +1,62 @@
+[2026-09-06 15:26:25] Starting GENIE3 density sweep: 3 tiers x 3 seeds (9 combos), data_root=../Marlene/data
+[2026-09-06 15:26:25] === tier1_seed0 (n_timepoints_keep=15) ===
+[2026-09-06 15:26:25]   FAILED after 0.0 min: FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '../Marlene/data/data_tier1_seed0/SERGIO-Marlene.h5ad', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2026-09-06 15:26:25] === tier1_seed1 (n_timepoints_keep=15) ===
+[2026-09-06 15:26:25]   FAILED after 0.0 min: FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '../Marlene/data/data_tier1_seed1/SERGIO-Marlene.h5ad', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2026-09-06 15:26:25] === tier1_seed2 (n_timepoints_keep=15) ===
+[2026-09-06 15:26:25]   FAILED after 0.0 min: FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '../Marlene/data/data_tier1_seed2/SERGIO-Marlene.h5ad', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2026-09-06 15:26:25] === tier2_seed0 (n_timepoints_keep=5) ===
+[2026-09-06 15:26:25]   FAILED after 0.0 min: FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '../Marlene/data/data_tier2_seed0/SERGIO-Marlene.h5ad', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2026-09-06 15:26:25] === tier2_seed1 (n_timepoints_keep=5) ===
+[2026-09-06 15:26:25]   FAILED after 0.0 min: FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '../Marlene/data/data_tier2_seed1/SERGIO-Marlene.h5ad', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2026-09-06 15:26:25] === tier2_seed2 (n_timepoints_keep=5) ===
+[2026-09-06 15:26:25]   FAILED after 0.0 min: FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '../Marlene/data/data_tier2_seed2/SERGIO-Marlene.h5ad', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2026-09-06 15:26:25] === tier3_seed0 (n_timepoints_keep=3) ===
+[2026-09-06 15:26:25]   FAILED after 0.0 min: FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '../Marlene/data/data_tier3_seed0/SERGIO-Marlene.h5ad', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2026-09-06 15:26:25] === tier3_seed1 (n_timepoints_keep=3) ===
+[2026-09-06 15:26:25]   FAILED after 0.0 min: FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '../Marlene/data/data_tier3_seed1/SERGIO-Marlene.h5ad', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2026-09-06 15:26:25] === tier3_seed2 (n_timepoints_keep=3) ===
+[2026-09-06 15:26:25]   FAILED after 0.0 min: FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = '../Marlene/data/data_tier3_seed2/SERGIO-Marlene.h5ad', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2026-09-06 15:26:25] 
+[2026-09-06 15:26:25] No combos completed successfully; skipping summary outputs.
+[2026-09-06 15:39:19] Starting GENIE3 density sweep: 3 tiers x 3 seeds (9 combos), data_root=../data
+[2026-09-06 15:39:19] === tier1_seed0 (n_timepoints_keep=15) ===
+[2026-09-06 16:51:16] Starting GENIE3 density sweep: 3 tiers x 3 seeds (9 combos), data_root=../data
+[2026-09-06 16:51:16] === tier1_seed0 (n_timepoints_keep=15) ===
+[2026-09-06 17:52:43] Starting GENIE3 density sweep: 3 tiers x 3 seeds (9 combos), data_root=../data
+[2026-09-06 17:52:43] === tier1_seed0 (n_timepoints_keep=15) ===
+[2026-09-06 18:22:43] Theoretical random baseline: AUPRC=0.0780 (n_true_edges/(n_genes*n_tfs)), AUROC=0.5000
+[2026-09-06 18:22:43]   AUPRC=0.5896 AUROC=0.8711
+[2026-09-06 18:22:43]   done in 30.0 min
+[2026-09-06 18:22:43] === tier1_seed1 (n_timepoints_keep=15) ===
+[2026-09-06 18:46:11] Starting GENIE3 density sweep: 3 tiers x 3 seeds (9 combos), data_root=../data
+[2026-09-06 18:46:11] === tier1_seed0 (n_timepoints_keep=15) ===
+[2026-09-06 18:49:17] Theoretical random baseline: AUPRC=0.0780 (n_true_edges/(n_genes*n_tfs)), AUROC=0.5000
+[2026-09-06 18:49:17]   AUPRC=0.5890 AUROC=0.8693
+[2026-09-06 18:49:17]   done in 3.1 min
+[2026-09-06 18:49:17] === tier1_seed1 (n_timepoints_keep=15) ===
+[2026-09-06 18:52:22]   AUPRC=0.5804 AUROC=0.8683
+[2026-09-06 18:52:22]   done in 3.1 min
+[2026-09-06 18:52:22] === tier1_seed2 (n_timepoints_keep=15) ===
+[2026-09-06 18:55:26]   AUPRC=0.5839 AUROC=0.8662
+[2026-09-06 18:55:26]   done in 3.1 min
+[2026-09-06 18:55:26] === tier2_seed0 (n_timepoints_keep=5) ===
+[2026-09-06 18:58:29]   AUPRC=0.5696 AUROC=0.8573
+[2026-09-06 18:58:29]   done in 3.0 min
+[2026-09-06 18:58:29] === tier2_seed1 (n_timepoints_keep=5) ===
+[2026-09-06 19:01:32]   AUPRC=0.5472 AUROC=0.8481
+[2026-09-06 19:01:32]   done in 3.1 min
+[2026-09-06 19:01:32] === tier2_seed2 (n_timepoints_keep=5) ===
+[2026-09-06 19:04:46]   AUPRC=0.5694 AUROC=0.8615
+[2026-09-06 19:04:46]   done in 3.2 min
+[2026-09-06 19:04:46] === tier3_seed0 (n_timepoints_keep=3) ===
+[2026-09-06 19:07:51]   AUPRC=0.5475 AUROC=0.8404
+[2026-09-06 19:07:51]   done in 3.1 min
+[2026-09-06 19:07:51] === tier3_seed1 (n_timepoints_keep=3) ===
+[2026-09-06 19:10:54]   AUPRC=0.5444 AUROC=0.8453
+[2026-09-06 19:10:54]   done in 3.1 min
+[2026-09-06 19:10:54] === tier3_seed2 (n_timepoints_keep=3) ===
+[2026-09-06 19:13:58]   AUPRC=0.5449 AUROC=0.8504
+[2026-09-06 19:13:58]   done in 3.1 min
+[2026-09-06 19:13:58] 
+[2026-09-06 19:13:58] Sweep finished. done=9 failed=0 (of 9 total)
