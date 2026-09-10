@@ -97,20 +97,29 @@ def _run_genie3_core(expr_df, tfs, seed, n_estimators, client):
     return network_df
 
 
-MAX_CELLS = 50000
-# CORRECTED (was 2000): smaller than every tier's natural pool (8,100/
-# 13,500/40,500, per Marlene's own per-cell SERGIO-Marlene.h5ad prep,
-# which this script reuses) -- same confound class as PseudoGRN's
-# original 3000 cap and MTGRN's original 1500 cap, found via
-# cross_model_audit_report.md and verified directly against n_obs read
-# from the actual per-tier .h5ad files (see check_max_cells_confound.py)
-# before this fix was applied. Set well above Tier 1's ~40,500 natural
-# pool so the cap never actually triggers -- unlike PseudoGRN/MTGRN,
-# GENIE3's Random Forest cost is cheap enough at this cell count
-# (~3 min/run observed even under the old, smaller cap) that a full
-# uncapped sweep is expected to stay fast; if a real run shows otherwise,
-# that's the signal to introduce a real (natural-pool-preserving) cap,
-# not to guess one in advance.
+MAX_CELLS = 15000
+# REVISED (was 50000, before that 2000): 50000 (fully uncapped) confirmed
+# stuck on real Kaggle data -- tier1_seed0 (40,500 cells) did not finish
+# in 50 minutes. Root cause identified by reading arboreto's OWN
+# create_graph() (arboreto/core.py): it scatters the TF matrix
+# efficiently (client.scatter(tf_matrix, broadcast=True)) but embeds each
+# of the 400 target genes' expression column directly into the Dask task
+# graph via delayed(expression_matrix[:, target_gene_index], pure=True)
+# instead of scattering it -- at 40,500 cells x 400 targets this produces
+# a very large task graph (Dask's own "Sending large graph of size
+# 62.02 MiB" warning), and serialization/scheduling overhead there, not
+# RF-fitting compute, is almost certainly the real bottleneck. This is a
+# known-shape scaling weakness in the FROZEN arboreto library itself
+# (confirmed by reading its source, not guessed) -- not something GPU
+# addresses (it's graph-transmission overhead, not compute), and not
+# something to patch here given the correctness risk of touching frozen
+# third-party graph-construction code under time pressure (same
+# precedent as declining a GPU rewrite of PseudoGRN's MI estimator).
+# 15000 is a pragmatic, NOT independently benchmarked, Tier-1-only cap --
+# comfortably above Tier 2's natural 13,500 (preserves tier ordering) and
+# ~37% of the data volume that just got stuck at 40,500. Adjust down
+# further if still slow, or up if it turns out comfortably fast -- this
+# number is a starting point under time pressure, not a measured optimum.
 
 
 def run_one_combo(adata, gt_edges, seed, n_estimators=None):
