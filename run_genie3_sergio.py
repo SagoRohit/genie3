@@ -97,7 +97,20 @@ def _run_genie3_core(expr_df, tfs, seed, n_estimators, client):
     return network_df
 
 
-MAX_CELLS = 2000
+MAX_CELLS = 50000
+# CORRECTED (was 2000): smaller than every tier's natural pool (8,100/
+# 13,500/40,500, per Marlene's own per-cell SERGIO-Marlene.h5ad prep,
+# which this script reuses) -- same confound class as PseudoGRN's
+# original 3000 cap and MTGRN's original 1500 cap, found via
+# cross_model_audit_report.md and verified directly against n_obs read
+# from the actual per-tier .h5ad files (see check_max_cells_confound.py)
+# before this fix was applied. Set well above Tier 1's ~40,500 natural
+# pool so the cap never actually triggers -- unlike PseudoGRN/MTGRN,
+# GENIE3's Random Forest cost is cheap enough at this cell count
+# (~3 min/run observed even under the old, smaller cap) that a full
+# uncapped sweep is expected to stay fast; if a real run shows otherwise,
+# that's the signal to introduce a real (natural-pool-preserving) cap,
+# not to guess one in advance.
 
 
 def run_one_combo(adata, gt_edges, seed, n_estimators=None):
